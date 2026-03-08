@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Password - BookingControl</title>
+    <title>Reset Password - Hosta</title>
     <style>
         * {
             margin: 0;
@@ -183,13 +183,12 @@
                 You can now sign in with your new password.
             </div>
             <div class="app-link">
-                <a href="bookingcontrol://">Open BookingControl App</a>
+                <a href="hosta://">Open Hosta App</a>
             </div>
         </div>
     </div>
 
     <script>
-        // Supabase credentials - REPLACE WITH YOUR VALUES
         const SUPABASE_URL = 'https://aqrkdsvnfnhqqjecrsfn.supabase.co';
         const SUPABASE_ANON_KEY = 'sb_publishable_J39IMzrreJanCROr2tLllA_etpVHHDP';
 
@@ -199,7 +198,6 @@
         const formView = document.getElementById('form-view');
         const successView = document.getElementById('success-view');
 
-        // Get access token from URL hash
         const hash = window.location.hash.substring(1);
         const params = new URLSearchParams(hash);
         const accessToken = params.get('access_token');
@@ -245,7 +243,6 @@
                     throw new Error(error.message || 'Failed to reset password');
                 }
 
-                // Success!
                 formView.style.display = 'none';
                 successView.style.display = 'block';
 
